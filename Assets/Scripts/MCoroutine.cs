@@ -10,17 +10,22 @@ public class MCoroutine : MonoBehaviour
 
     float typeDelay = .25f;
 
+    private void Start()
+    {
+        StartCoroutine(TypeString());
+    }
+
     IEnumerator TypeString()
     {
         do
         {
             yield return new WaitForSeconds(typeDelay);
 
-            index++;
-
             displayString += originalString[index];
 
             Debug.Log(displayString);
+
+            index++;
 
         } while (index < originalString.Length);
     }
