@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class MCoroutine : MonoBehaviour
 {
-    string originalString = "Hello World!";
+    public string originalString = "Hello World!";
     string displayString;
     int index;
 
-    float typeDelay = .25f;
+    public float typeDelay = .25f;
+    public Text displayText;
 
     private void Start()
     {
@@ -23,7 +25,7 @@ public class MCoroutine : MonoBehaviour
 
             displayString += originalString[index];
 
-            Debug.Log(displayString);
+            displayText.text = displayString;
 
             index++;
 
