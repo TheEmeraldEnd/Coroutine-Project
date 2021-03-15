@@ -21,6 +21,7 @@ public class MCoroutine : MonoBehaviour
     {
         do
         {
+            //Delays in specified seconds
             yield return new WaitForSeconds(typeDelay);
 
             displayString += originalString[index];
