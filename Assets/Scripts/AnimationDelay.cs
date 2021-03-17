@@ -17,9 +17,9 @@ public class AnimationDelay : MonoBehaviour
     //Delays the animaiton
     IEnumerator AnimationDelaying()
     {
-        for (int i = 0; i <= 4; i++)
+        while (true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(delaySeconds);
             animator.SetTrigger("StartAnimation");
         }
     }

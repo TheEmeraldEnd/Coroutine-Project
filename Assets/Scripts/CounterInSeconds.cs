@@ -8,16 +8,20 @@ public class CounterInSeconds : MonoBehaviour
     Text text;
     int secondsPassed;
 
-    void OnUpdate()
+    void Start()
     {
+        text = GetComponent<Text>();
         StartCoroutine(AddSecond());
     }
 
     IEnumerator AddSecond()
     {
-        yield return new WaitForSeconds(1);
-        secondsPassed++;
-        text.text = secondsPassed.ToString();
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            secondsPassed++;
+            text.text = $"You have spent {secondsPassed:N} seconds with scarecrow";
+        }
     }
 
 }
